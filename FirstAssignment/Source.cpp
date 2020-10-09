@@ -3,19 +3,29 @@
 
 int main()
 {
-	//using std::cout;
-	//using std::cin;
-	//std::cout << "test \n" << std::endl;
-	//int a;
-	//cin >> a;
-
-	//std::string myString;
-
-	//cin >> myString;
-
-	//std::cout << "did run" << "\nnum: " << a << "\nstring: " << myString << std::endl;
-
-	//std::cout << "\nline: " << myString;
+//#include <iostream>
+//#include <random>
+//#include <ctime>
+//
+//
+//	int randInt(int min, int max)
+//	{
+//		return std::rand() % (max - min) + min;
+//	}
+//
+//	int main()
+//	{
+//		std::srand(std::time(nullptr)); // seed
+//
+//		for (int i = 0; i < 100; i++)
+//		{
+//			std::cout << randInt(5, 30) << "\n";
+//		}
+//
+//		// print ou
+//
+//		return 0;
+//	}
  	
 	std::cout << "You are playing Mad Libs, please enter when asked with proper grammar" << std::endl;
 
