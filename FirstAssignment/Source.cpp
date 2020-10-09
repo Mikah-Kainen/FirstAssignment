@@ -17,7 +17,7 @@ int main()
 
 	//std::cout << "\nline: " << myString;
  	
-	std::cout << "You are playing Mad Libs, please enter when asked with proper grammar";
+	std::cout << "You are playing Mad Libs, please enter when asked with proper grammar" << std::endl;
 
 	std::string noun;
 	std::string verb;
@@ -25,20 +25,23 @@ int main()
 	std::string noun2;
 	std::string noun3;
 	std::string verb2;
+	std::string subordinatingConjunction;
 
-	std::cout << "please give a noun";
-	std::cin >> noun2;
-	std::cout << "please give a noun";
-	std::cin >> noun3;
-	std::cout << "please give a noun";
-	std::cin >> noun;
-	std::cout << "please give a verb";
-	std::cin >> verb;
-	std::cout << "please give a verb";
-	std::cin >> verb2;
-	std::cout << "please give a adverb";
-	std::cin >> adverb;
+	std::cout << "\nplease give a noun";
+	std::getline(std::cin, noun2);
+	std::cout << "\nplease give a noun";
+	std::getline(std::cin, noun3);
+	std::cout << "\nplease give a noun";
+	std::getline(std::cin, noun);
+	std::cout << "\nplease give a verb that takes a direct object";
+	std::getline(std::cin, verb2);
+	std::cout << "\nplease give a verb";
+	std::getline(std::cin, verb);
+	std::cout << "\nplease give a adverb";
+	std::getline(std::cin, adverb);
+	std::cout << "\nplease give a subordinating conjunction(like with or while)";
+	std::getline(std::cin, subordinatingConjunction);
 
-	std::cout << "\nThe " << noun << " \n " << adverb << " \n" << verb << " while the " << "\n" << noun2 << " \n " << verb2 << "the" << " \n " << noun3;
+	std::cout << "\nThe " << noun << " " << adverb << " " << verb << " " << subordinatingConjunction << " the " << noun2 << " " << verb2 << " the" << " " << noun3;
 
 }
