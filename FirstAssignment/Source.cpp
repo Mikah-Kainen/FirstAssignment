@@ -1,5 +1,12 @@
 #include <iostream>
 #include <string>
+#include <random>
+#include <ctime>
+
+int randInt(int min, int max)
+{
+	return std::rand() % (max - min) + min;
+}
 
 int main()
 {
@@ -26,6 +33,7 @@ int main()
 //
 //		return 0;
 //	}
+	std::srand(std::time(nullptr));
  	
 	std::cout << "You are playing Mad Libs, please enter when asked with proper grammar" << std::endl;
 
