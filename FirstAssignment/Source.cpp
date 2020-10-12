@@ -31,7 +31,7 @@ void swap(int* a, int* b)	// pointer to a and b
 
 int main()
 {
-
+	//////////////////////////////////////////////////////////////////////////////////////////Chris! please show me Vectors and more pointer practice/ from Mikah before I forget
 	int x = 5;
 	int y = 6;
 
