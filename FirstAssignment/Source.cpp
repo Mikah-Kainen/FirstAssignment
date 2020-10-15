@@ -3,8 +3,9 @@
 #include <random>
 #include <ctime>
 #include <array>
+#include <vector>
 
-int GetRandom(int min, int max)
+int GetRandom(int max, int min)
 {
 	return std::rand() % (max - min) + min;
 }
@@ -27,15 +28,95 @@ void swap(int* a, int* b)	// pointer to a and b
 	*b = temp;
 }
 
+void AddRandomNumbers(int amountOfNumbers, int max, int min, std::vector<int>* vectorPlace)
+{
+	for (int i = 0; i < amountOfNumbers; i ++)
+	{
+		vectorPlace->push_back(GetRandom(max, min));
+	}
+}
 
+void PrintVector(std::vector<int>* vectorPlace)
+{
+	for(int number : *vectorPlace)
+	{
+		std::cout << number << std::endl;
+	}
+}
+
+void SortVector(std::vector<int>* vectorPlace)
+{
+	for (size_t x = vectorPlace->size() - 1; x > 0; x --)
+	{
+		for (size_t i = 0; i < x; i++)
+		{
+			if (vectorPlace->at(i) > vectorPlace->at(i + 1))
+			{
+				int tempHolder = vectorPlace->at(i);
+				vectorPlace->at(i) = vectorPlace->at(i + 1);
+				vectorPlace->at(i + 1) = tempHolder;
+			}
+		}
+	}
+}
 
 int main()
 {
+
+	std::srand(std::time(nullptr));
 	//////////////////////////////////////////////////////////////////////////////////////////Chris! please show me Vectors and more pointer practice/ from Mikah before I forget
 	int x = 5;
 	int y = 6;
 
 	swap(&x, &y);
+
+	//Create a vector
+	//pass it into a void function that takes in the vector and a size.  Add that many random numbers 1-1000 to the vector
+	//function that prints out the vector
+	//void function that takes in a vector and sorts it
+
+	std::vector<int> NewVector{};
+
+	AddRandomNumbers(10, 1000, 0, &NewVector);
+	PrintVector(&NewVector);
+	std::cout << std::endl;
+	SortVector(&NewVector);
+	PrintVector(&NewVector);
+
+	//Homework:
+	//Reverse vector function (void)
+	//Void function that takes in a vector and an array and puts all the values of the array into the vector
+
+
+
+
+	//std::vector<int> MyVector {};
+	//MyVector.push_back(4);
+	//MyVector.push_back(3);
+
+	//MyVector.push_back(12);
+	//
+	//auto t = &MyVector;
+	//auto t1 = &MyVector[0];
+	//MyVector.erase(MyVector.begin() + 1); //deleting the second element in the array
+
+	//std::cout << t << std::endl;
+	//std::cout << t1 << std::endl;
+	//std::cout << &MyVector[1] << std::endl;
+
+	//for (size_t i = 0; i < MyVector.size(); i++)
+	//{
+	//	//normal forloop
+	//}
+
+	//for (auto var : MyVector)
+	//{
+	//	//foreach
+	//}
+
+
+	//std::cout << &MyVector[2] << std::endl;
+
 //	int randInt(int min, int max)
 //	{
 //		return std::rand() % (max - min) + min;
@@ -67,8 +148,6 @@ int main()
 	//std::cout << xpointer << std::endl;
 
 	//std::cout << *xpointer << std::endl;
-
-	std::srand(std::time(nullptr));
 
 	std::array<int, 5> numbers = {GetRandom(0, 101), GetRandom(0, 101), GetRandom(0, 101), GetRandom(0, 101), GetRandom(0, 101)};
 	//std::cout << "ArrayPointer: " << &numbers << ", Array[0]: " << &numbers[0] << ", Array[1]: " << &numbers[1] << ", Array[2]: " << &numbers[2] << ", Array[3]: " << &numbers[3] << ", Array[4]" << &numbers[4] << std::endl;
