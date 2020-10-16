@@ -10,15 +10,6 @@ int GetRandom(int max, int min)
 	return std::rand() % (max - min) + min;
 }
 
-//void foo(int arr[])
-//{
-//
-//}
-
-//void foo(int* arr)
-//{
-//
-//}
 
 // should be able to swap the values of two numbers
 void swap(int* a, int* b)	// pointer to a and b
@@ -60,6 +51,25 @@ void SortVector(std::vector<int>* vectorPlace)
 	}
 }
 
+void ReverseVector(std::vector<int>* vectorPlace)
+{
+	for (size_t i = 0; i < vectorPlace->size() / 2; i ++)
+	{
+		int tempHolder = vectorPlace->at(i);
+		vectorPlace->at(i) = vectorPlace->at(vectorPlace->size() - i - 1);
+		vectorPlace->at(vectorPlace->size() - i - 1) = tempHolder;
+	}
+}
+
+void CopyToVector(std::vector<int>* vectorPlace, int* arrayPlace[10])
+{
+	for (size_t i = 0; i < 10; i ++)
+	{
+		vectorPlace->push_back(*arrayPlace[i]);
+		*arrayPlace[i] = 0;
+	}
+}
+
 int main()
 {
 
@@ -81,6 +91,20 @@ int main()
 	PrintVector(&NewVector);
 	std::cout << std::endl;
 	SortVector(&NewVector);
+	PrintVector(&NewVector);
+	std::cout << std::endl;
+	ReverseVector(&NewVector);
+	PrintVector(&NewVector);
+
+	int numbers[10]{};
+
+	for (size_t i = 0; i < 10; i ++)
+	{
+		numbers[i] = i;
+	}
+
+	std::cout << std::endl;
+	CopyToVector(&NewVector, &(numbers[0]));
 	PrintVector(&NewVector);
 
 	//Homework:
